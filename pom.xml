@@ -41,10 +41,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.h2database</groupId>-->
+        <!--            <artifactId>h2</artifactId>-->
+        <!--            <version>2.1.212</version>-->
+        <!--            <scope>runtime</scope>-->
+        <!--        </dependency>-->
+
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>2.1.212</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
@@ -121,34 +127,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.microsoft.azure</groupId>
-                <artifactId>azure-webapp-maven-plugin</artifactId>
-                <version>2.5.0</version>
-                <configuration>
-                    <schemaVersion>v2</schemaVersion>
-                    <subscriptionId>f5a56fb4-3106-47ed-bace-c5bc25fa38a3</subscriptionId>
-                    <resourceGroup>srpdemo-1652976550669-rg</resourceGroup>
-                    <appName>srpdemo-1652976550669</appName>
-                    <pricingTier>B1</pricingTier>
-                    <region>centralus</region>
-                    <runtime>
-                        <os>Linux</os>
-                        <javaVersion>Java 8</javaVersion>
-                        <webContainer>Java SE</webContainer>
-                    </runtime>
-                    <deployment>
-                        <resources>
-                            <resource>
-                                <directory>${project.basedir}/target</directory>
-                                <includes>
-                                    <include>*.jar</include>
-                                </includes>
-                            </resource>
-                        </resources>
-                    </deployment>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.microsoft.azure</groupId>
